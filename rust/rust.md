@@ -3,8 +3,8 @@
 
 ## 자료
 
-[utilForever님 OnBoarding Plan](https://github.com/utilForever/onboarding-for-beginners#materials)
-[The Book](https://doc.rust-lang.org/book/)
+[utilForever님 OnBoarding Plan](https://github.com/utilForever/onboarding-for-beginners#materials)<br>
+[The Book](https://doc.rust-lang.org/book/)<br>
 [Easy Rust in Korean](https://youtube.com/playlist?list=PLfllocyHVgsSJf1zO6k6o3SX2mbZjAqYE)
 
 ## 1. 설치 및 셋팅
@@ -16,8 +16,11 @@ wsl 사용자
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
+
 설치시 PATH 설정 `source $HOME/.cargo/env`
-`rustc --version` 실행해서 설정되었는지 확인
+
+
+실행해서 설정되었는지 확인 `rustc --version`
 [참고](https://www.rust-lang.org/tools/install)
 
 
@@ -35,7 +38,7 @@ fn main() {
 }
 ```
 
-```sh
+```
 $ rustc main.rs
 $ ./main
 Hello, world!
@@ -46,10 +49,14 @@ Hello, world!
 Cargo is Rust’s build system and package manager.
 CMake와 이것저것 합쳐진 것 같다.
 
+
 > Rust 유저들을 `Rustaceans`라고 부른다.
 
+
 설치확인
-`cargo --version`
+```
+cargo --version
+```
 
 프로젝트 만들기
 ```sh
@@ -57,12 +64,15 @@ cargo new hello_cargo
 cd hello_cargo
 ```
 
-> 기본은 .gitignore 파일과 함께 생성됨
-> 기존 git repo안에서 `cargo new`실행 시 git 파일은 생성되지 않음
+> 기본은 .gitignore 파일과 함께 생성됨<br>
+> 기존 git repo안에서 `cargo new`실행 시 git 파일은 생성되지 않음<br>
 > `cargo new --vcs=git`을 사용하면 위의 내용 무시하고 git 파일 생성 가능
+
 
 [TOML](https://toml.io/en/) 파일이 생성됨.
 프로젝트의 정보, 프로젝트 의존성(crates) 담고있음
+
+
 Cargo.toml
 ```toml
 [package]
