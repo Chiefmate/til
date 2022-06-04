@@ -16,6 +16,7 @@
 
 시간복잡도 & 공간복잡도
 | 분류 | worst-case | best-case | average-case | space |
+| :---: | :---: | :---: | :--: | :---: |
 |  | $O(n^2)$ | $O(nlog n)$ | $O(nlog n)$ | $O(log n)$ |
 
 코드
