@@ -157,6 +157,35 @@ fn main() {
 `String::new()` String 타입의 `new`라는 associated function 사용하여 인스턴스 생성.
 
 
+## 3. Common Programming Concepts
+
+
+### 3.1. 변수와 가변성
+`let x`: 새로운 immutable 변수 x 생성<br>
+`let mut y': 새로운 mutable 변수 y생성<br>
+`const Z`: 새로운 상수 Z 생성<br>
+
+#### Shadowing: immutable 변수를 `let` 키워드를 이용해서 같은 변수 이름으로 다시 다른 데이터 넣어줌. 
+
+차이점
+1. 기존 데이터는 사라짐.
+1. 다른 데이터 타입의 데이터 할당 가능
+
+
+> mutable 변수에 `let` 키워드로 shadowing 시도하면 컴파일 에러.
+
+
+### 3.2. 데이터 타입
+
+
+### 3.3. 함수
+
+
+### 3.4. 주석
+
+
+### 3.5. 제어문
+
 
 
 ## 4. 소유권 이해하기
