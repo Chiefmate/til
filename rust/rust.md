@@ -177,8 +177,41 @@ fn main() {
 
 ### 3.2. 데이터 타입
 
+`let guess: u32 = 42` 처럼 `u32` 부분에 타입을 지정 가능
+
+
+1. 스칼라 타입: 정수, 부동소수점, 불리안, 문자
+1. 컴파운드 타입: 튜플, 배열
+
+```rust
+fn main() {
+    let x: (i32, f64, u8) = (500, 6.4, 1);  // tuple 선언 및 초기화
+
+    let five_hundred = x.0; // tuple의 원소에 접근
+
+    let a: [i32; 5] = [1, 2, 3, 4, 5];  // array 선언 및 초기화
+
+    let first = a[0];   // array 원소에 접근
+}
+```
 
 ### 3.3. 함수
+
+Rust 코드의 함수와 변수명은 `snake case`를 컨벤션으로 사용.<br>
+알파벳 소문자와 언더바(_)만을 사용
+
+
+매개변수
+```rust
+fn main() {
+    print_labeled_measurement(5, 'h');
+}
+
+fn print_labeled_measurement(value: i32, unit_label: char) {    // 매개변수 타입 선언
+    println!("The measurement is: {} {}", value, unit_label);
+}
+```
+
 
 
 ### 3.4. 주석
