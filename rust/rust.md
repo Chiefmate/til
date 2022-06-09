@@ -201,7 +201,7 @@ Rust 코드의 함수와 변수명은 `snake case`를 컨벤션으로 사용.<br
 알파벳 소문자와 언더바(_)만을 사용
 
 
-매개변수
+#### 3.3.1. 매개변수
 ```rust
 fn main() {
     print_labeled_measurement(5, 'h');
@@ -212,6 +212,44 @@ fn print_labeled_measurement(value: i32, unit_label: char) {    // 매개변수 
 }
 ```
 
+#### 3.3.2. 문장과 표현 (Statements and Expressions)
+함수의 Body 부분은 statements로 이루어져 있는데, 각 statement는 expression으로 끝날 수도 있다. <br>
+1. Statements are instructions that perform some action and **do not return** a value. 
+1. Expressions evaluate to a resulting value.
+
+예시.
+```rust
+fn main() {
+    let y = 6;              // good
+    let x = (let y = 6);    // error
+}
+```
+`let y = 6;`은 statement다. 함수 정의도 statement다. 따라서 return value가 없다. <br>
+그래서 두 번째 문장에서 에러가 난다. `let y = 6`은 value가 아니기 때문. C언어에서는 `x = y = 6;`과 같은 대입이 가능했지만 Rust에서는 불가능하다.
+
+Expression은 어떤 value로 평가된다(만들어진다). `5 + 6`이 `11`의 값으로 평가되듯이 어떤 값을 나타낸다. <br>
+Expression은 statement를 구성하는 한 부분이 될 수 있다. `let y = 6`에서 `6`은 expression이다. 함수를 호출하는 것, 매크로를 호출하는 것, `{ }`를 통해 생긴 새로운 scope block도 expression이다.
+
+예시.
+```rust
+fn main() {
+    let y = {
+        let x = 3;
+        x + 1
+    };
+
+    println!("The value of y is: {}", y);
+}
+```
+새로운 블록:
+```
+{
+    let x = 3;
+    x + 1
+}
+```
+이 블록은 하나의 expression이고, `4`의 value를 나타낸다. <br>
+`x + 1`의 끝에 `;`이 안붙어있는데, expression은 세미콜론으로 끝나지 않는다. 세미콜론을 붙이면 statement가 된다. 그렇기 때문에 세미콜론을 붙이면 값을 반환하지 않으니 구분하자.
 
 
 ### 3.4. 주석
